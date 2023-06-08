@@ -15,7 +15,7 @@ const About = ()=> {
         <div>
             <Header />
 
-            <div className="h-screen md:p-36 md:flex px-10 pt-32 pb-28">
+            <div className=" md:p-36 md:flex px-10 pt-32 pb-16">
                 <div className="md:border-r md:border-slate-300 md:w-1/2 flex flex-col justify-center ">
                     <h3 className="text-my-primary text-xl">About Me</h3>
                     <p>Hi, my name is Rizky Afriyandi, i started my journey as a web developer since 2021, i used to be a Civil Engineering student at University, then i switched my carreer path to web developing due to covid-19 pandemic.</p>

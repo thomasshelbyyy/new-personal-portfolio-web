@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 const Header = ()=> {
     const location = useLocation()
-    console.log(location)
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [showNavbar, setShowNavbar] = useState(true)
