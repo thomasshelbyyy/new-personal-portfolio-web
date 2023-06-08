@@ -1,0 +1,12 @@
+.my-nav::after {
+    content: '';
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+    transform: scaleX(0);
+    transition: 0.2s;
+}
+
+.my-nav:hover::after {
+    transform: scaleX(1);
+}
