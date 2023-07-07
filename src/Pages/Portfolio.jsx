@@ -38,8 +38,8 @@ const Portfolio = ()=> {
                         name="RMDB"
                         image={rmdb}
                         github="https://github.com/thomasshelbyyy/rmdb"
-                        link="https://subtle-bavarois-cded5a.netlify.app"
-                        description={`RMDB is stands for "Rizky's Movie Database, this project is based on TMDB website"`}
+                        link="https://rizkymdb.netlify.app/"
+                        description={`RMDB is stands for "Rizky's Movie Database", this is a website that consume API from tmdb.com`}
                     />
 
                     <PortfolioCard 
