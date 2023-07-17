@@ -2,7 +2,6 @@ import { useState } from "react"
 import Footer from "../Components/Footer"
 import Header from "../Components/Header"
 import PortfolioCard from "../Components/PortfolioCard"
-import tribute from  "../assets/tribute.png"
 import rmdb from "../assets/rmdb.png"
 import toDoList from "../assets/to-do-list.png"
 import kopiSopoqAngen from "../assets/kopi-sopoq-angen.png"
@@ -10,6 +9,7 @@ import traversyMedia from "../assets/traversy-media.png"
 import restaruantWebsite from "../assets/restaurant-website.png"
 import photographyGallery from "../assets/photography-gallery.png"
 import myTunes from "../assets/mytunes.png"
+import recarro from "../assets/recarro.png"
 import { useEffect } from "react"
 
 const Portfolio = ()=> {
@@ -34,6 +34,14 @@ const Portfolio = ()=> {
                 </div>
 
                 <div className="flex flex-wrap justify-center">
+                    <PortfolioCard 
+                        name="Recarro"
+                        image={recarro}
+                        github="https://github.com/thomasshelbyyy/recarro"
+                        link="https://recarro.netlify.app/"
+                        description={`Recarro is a car rental website, built with React and Tailwind CSS, in this app you can choose the car you like, fill your information (data will not be saved to database yet), and validation to validate your data is correct or not`}
+                    />
+
                     <PortfolioCard 
                         name="RMDB"
                         image={rmdb}
@@ -72,22 +80,25 @@ const Portfolio = ()=> {
                         link="https://thomasshelbyyy.github.io/restaurant-website/"
                         description={`This is a Restaurant Website With some main menu, this website purpose is to improve my skill for layouting using CSS Grid`}
                     />
-                    <PortfolioCard 
-                        name="Photography Gallery"
-                        image={photographyGallery}
-                        github="https://github.com/thomasshelbyyy/photograpy-gallery"
-                        link="https://thomasshelbyyy.github.io/photograpy-gallery/"
-                        description={`This is a photography gallery example`}
-                    />
 
                     {showMore && (
-                        <PortfolioCard 
-                            name="MyTunes Landing Page"
-                            image={myTunes}
-                            github="https://github.com/thomasshelbyyy/mytunes-landingpage-example"
-                            link="https://thomasshelbyyy.github.io/mytunes-landingpage-example/"
-                            description={`This is a music equipment store landing page example, this website is not reponsive yet, and no functionality`}
-                        />
+                        <>
+                            <PortfolioCard 
+                                name="Photography Gallery"
+                                image={photographyGallery}
+                                github="https://github.com/thomasshelbyyy/photograpy-gallery"
+                                link="https://thomasshelbyyy.github.io/photograpy-gallery/"
+                                description={`This is a photography gallery example`}
+                            />
+                        
+                            <PortfolioCard 
+                                name="MyTunes Landing Page"
+                                image={myTunes}
+                                github="https://github.com/thomasshelbyyy/mytunes-landingpage-example"
+                                link="https://thomasshelbyyy.github.io/mytunes-landingpage-example/"
+                                description={`This is a music equipment store landing page example, this website is not reponsive yet, and no functionality`}
+                            />
+                        </>
                     )}
 
 
