@@ -10,6 +10,7 @@ import restaruantWebsite from "../assets/restaurant-website.png"
 import photographyGallery from "../assets/photography-gallery.png"
 import myTunes from "../assets/mytunes.png"
 import recarro from "../assets/recarro.png"
+import weatherApp from "../assets/weather-app.png"
 import { useEffect } from "react"
 
 const Portfolio = ()=> {
@@ -51,6 +52,14 @@ const Portfolio = ()=> {
                     />
 
                     <PortfolioCard 
+                        name="Weather App"
+                        image={weatherApp}
+                        github="https://github.com/thomasshelbyyy/react-weather-app"
+                        link="https://weather-app-by-rizky.netlify.app/"
+                        description={`A classic weather app built with react using openweathermap API`}
+                    />
+
+                    <PortfolioCard 
                         name="To Do List"
                         image={toDoList}
                         github="https://github.com/thomasshelbyyy/todolist"
@@ -73,16 +82,18 @@ const Portfolio = ()=> {
                         link="https://thomasshelbyyy.github.io/traversymedia-responsive-cloning/"
                         description={`This is a cloning landing page of a website name traversymedia.com. No functionality work here`}
                     />
-                    <PortfolioCard 
-                        name="Restaurant Website"
-                        image={restaruantWebsite}
-                        github="https://github.com/thomasshelbyyy/restaurant-website"
-                        link="https://thomasshelbyyy.github.io/restaurant-website/"
-                        description={`This is a Restaurant Website With some main menu, this website purpose is to improve my skill for layouting using CSS Grid`}
-                    />
+                    
 
                     {showMore && (
                         <>
+                            <PortfolioCard 
+                                name="Restaurant Website"
+                                image={restaruantWebsite}
+                                github="https://github.com/thomasshelbyyy/restaurant-website"
+                                link="https://thomasshelbyyy.github.io/restaurant-website/"
+                                description={`This is a Restaurant Website With some main menu, this website purpose is to improve my skill for layouting using CSS Grid`}
+                            />
+                            
                             <PortfolioCard 
                                 name="Photography Gallery"
                                 image={photographyGallery}
