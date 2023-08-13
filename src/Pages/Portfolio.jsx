@@ -11,6 +11,7 @@ import photographyGallery from "../assets/photography-gallery.png"
 import myTunes from "../assets/mytunes.png"
 import recarro from "../assets/recarro.png"
 import weatherApp from "../assets/weather-app.png"
+import beliKelambi from "../assets/beliKelambi.png"
 import { useEffect } from "react"
 
 const Portfolio = ()=> {
@@ -35,6 +36,14 @@ const Portfolio = ()=> {
                 </div>
 
                 <div className="flex flex-wrap justify-center">
+                    <PortfolioCard 
+                        name="beliKelambi"
+                        image={beliKelambi}
+                        github="https://github.com/thomasshelbyyy/bellikelambi"
+                        link="https://bellikelambi.netlify.app/"
+                        description={`beliKelambi is a E Commerce system where you can do CRUD (Create, Read, Update, and Delete) with the cart fter you logged in, everything works well in this app except for the payment because it does not have backend. This app built with React JS and fakestoreapi.com for the products API`}
+                    />
+
                     <PortfolioCard 
                         name="Recarro"
                         image={recarro}
@@ -75,17 +84,19 @@ const Portfolio = ()=> {
                         description={`'Kopi Sopoq Angen', or One Heart Coffee in English, this is a responsive landing page example for coffeeshop, all the functionality are not work for now`}
                     />
 
-                    <PortfolioCard 
-                        name="Traversy Media Cloning"
-                        image={traversyMedia}
-                        github="https://github.com/thomasshelbyyy/traversymedia-responsive-cloning"
-                        link="https://thomasshelbyyy.github.io/traversymedia-responsive-cloning/"
-                        description={`This is a cloning landing page of a website name traversymedia.com. No functionality work here`}
-                    />
+                    
                     
 
                     {showMore && (
                         <>
+
+                            <PortfolioCard 
+                                name="Traversy Media Cloning"
+                                image={traversyMedia}
+                                github="https://github.com/thomasshelbyyy/traversymedia-responsive-cloning"
+                                link="https://thomasshelbyyy.github.io/traversymedia-responsive-cloning/"
+                                description={`This is a cloning landing page of a website name traversymedia.com. No functionality work here`}
+                            />
                             <PortfolioCard 
                                 name="Restaurant Website"
                                 image={restaruantWebsite}
