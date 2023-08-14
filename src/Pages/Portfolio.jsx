@@ -11,7 +11,7 @@ import photographyGallery from "../assets/photography-gallery.png"
 import myTunes from "../assets/mytunes.png"
 import recarro from "../assets/recarro.png"
 import weatherApp from "../assets/weather-app.png"
-import beliKelambi from "../assets/beliKelambi.png"
+import beliKelambi from "../assets/belikelambi.png"
 import { useEffect } from "react"
 
 const Portfolio = ()=> {
@@ -97,7 +97,7 @@ const Portfolio = ()=> {
                                 link="https://thomasshelbyyy.github.io/traversymedia-responsive-cloning/"
                                 description={`This is a cloning landing page of a website name traversymedia.com. No functionality work here`}
                             />
-                            
+
                             <PortfolioCard 
                                 name="Restaurant Website"
                                 image={restaruantWebsite}
