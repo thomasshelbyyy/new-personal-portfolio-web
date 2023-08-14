@@ -97,6 +97,7 @@ const Portfolio = ()=> {
                                 link="https://thomasshelbyyy.github.io/traversymedia-responsive-cloning/"
                                 description={`This is a cloning landing page of a website name traversymedia.com. No functionality work here`}
                             />
+                            
                             <PortfolioCard 
                                 name="Restaurant Website"
                                 image={restaruantWebsite}
