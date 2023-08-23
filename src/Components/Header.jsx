@@ -1,27 +1,40 @@
 import { Link, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion"
+
+const pathVariants = {
+    hidden: {
+        opacity: 0,
+        pathLength: 0
+    },
+    visible: {
+        opacity: 1,
+        pathLength: 1,
+        transition: {duration: 2}
+    }
+}
 
 const Header = ()=> {
     const location = useLocation()
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [showNavbar, setShowNavbar] = useState(true)
-    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+    const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
 
     useEffect(()=> {
         const handleScroll = () => {
-            const currentScrollPos = window.pageYOffset;
+            const currentScrollPos = window.scrollY;
             const visible = prevScrollPos > currentScrollPos;
       
             setShowNavbar(visible);
             setPrevScrollPos(currentScrollPos);
-          };
+        };
       
-          window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
       
-          return () => {
+        return () => {
             window.removeEventListener("scroll", handleScroll);
-          };
+        };
     }, [prevScrollPos])
 
     const handleMenutOpen = ()=> setIsMenuOpen(!isMenuOpen)
@@ -30,7 +43,9 @@ const Header = ()=> {
         // <nav className="relative overflow-hidden -top-96">
         <nav className={`fixed top-0 left-0 w-full transition duration-300 z-50 ${!showNavbar && "-translate-y-40"}`}>
             <div className="bg-my-primary flex justify-between px-20 py-5">
-                <Link to="/" className="text-3xl font-anton">The <span className="text-my-hover">Riz</span></Link>
+                <Link to="/" className="text-3xl font-anton">
+                    The <span className="text-my-hover">Riz</span>
+                </Link>
 
                 <div className="hidden md:block">
                     <div className="flex text-lg">
