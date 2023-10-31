@@ -12,21 +12,24 @@ import myTunes from "../assets/mytunes.png"
 import recarro from "../assets/recarro.png"
 import weatherApp from "../assets/weather-app.png"
 import beliKelambi from "../assets/belikelambi.png"
+import calm from "../assets/calm.png"
+import nodewave from "../assets/nodewave.png"
+import quiz from "../assets/quiz.png"
 import { useEffect } from "react"
 
-const Portfolio = ()=> {
+const Portfolio = () => {
 
     const [showMore, setShowMore] = useState(false)
 
-    useEffect(()=> {
-            document.title = "Portfolio | Personal Portfolio Web"
-    }, )
+    useEffect(() => {
+        document.title = "Portfolio | Personal Portfolio Web"
+    },)
 
-    const handleClick = ()=> {
+    const handleClick = () => {
         setShowMore(prevState => !prevState)
     }
 
-    return(
+    return (
         <div>
             <Header />
             <div className="pb-6 text-center pt-32">
@@ -36,15 +39,41 @@ const Portfolio = ()=> {
                 </div>
 
                 <div className="flex flex-wrap justify-center">
-                    <PortfolioCard 
+                    <PortfolioCard
+                        name="Quiz App"
+                        image={quiz}
+                        github="https://github.com/thomasshelbyyy/quiz-app"
+                        link="https://kuiskuisan.netlify.app/"
+                        description={`This Quiz App is built with React JS with simple state and props usage, you can see the leaderboard after playing`}
+                    />
+
+                    <PortfolioCard
+                        name="Nodewave Landing Page"
+                        image={nodewave}
+                        github="https://github.com/thomasshelbyyy/nodewave-test"
+                        link="https://nodewave-test-ejeqdfo96-rizkyafriyandi200-gmailcom.vercel.app/"
+                        description={`This is landing page for website called Nodewave, this project was built using Next JS, the purpose of this project is for coding interview test`}
+                    />
+
+                    <PortfolioCard
+                        name="Calm Landing Page Clone"
+                        image={calm}
+                        github="https://github.com/thomasshelbyyy/calm-landing-page-clone"
+                        link="https://calm-landing-page-clone.netlify.app/"
+                        description={`This is the clone of calm landing page website, the view is responsive for all device`}
+                    />
+
+                    <PortfolioCard
                         name="beliKelambi"
                         image={beliKelambi}
                         github="https://github.com/thomasshelbyyy/bellikelambi"
-                        link="https://bellikelambi.netlify.app/"
+                        link="https://belikelambi.netlify.app/"
                         description={`beliKelambi is a E Commerce system where you can do CRUD (Create, Read, Update, and Delete) with the cart fter you logged in, everything works well in this app except for the payment because it does not have backend. This app built with React JS and fakestoreapi.com for the products API`}
                     />
 
-                    <PortfolioCard 
+
+
+                    <PortfolioCard
                         name="Recarro"
                         image={recarro}
                         github="https://github.com/thomasshelbyyy/recarro"
@@ -52,7 +81,7 @@ const Portfolio = ()=> {
                         description={`Recarro is a car rental website, built with React and Tailwind CSS, in this app you can choose the car you like, fill your information (data will not be saved to database yet), and validation to validate your data is correct or not`}
                     />
 
-                    <PortfolioCard 
+                    <PortfolioCard
                         name="RMDB"
                         image={rmdb}
                         github="https://github.com/thomasshelbyyy/rmdb"
@@ -60,7 +89,7 @@ const Portfolio = ()=> {
                         description={`RMDB is stands for "Rizky's Movie Database", this is a website that consume API from tmdb.com`}
                     />
 
-                    <PortfolioCard 
+                    <PortfolioCard
                         name="Weather App"
                         image={weatherApp}
                         github="https://github.com/thomasshelbyyy/react-weather-app"
@@ -68,7 +97,7 @@ const Portfolio = ()=> {
                         description={`A classic weather app built with react using openweathermap API`}
                     />
 
-                    <PortfolioCard 
+                    <PortfolioCard
                         name="To Do List"
                         image={toDoList}
                         github="https://github.com/thomasshelbyyy/todolist"
@@ -76,7 +105,7 @@ const Portfolio = ()=> {
                         description={`simple to do list app, you can add, edit, delete, search and mark as done your task. NOTE: This application is not optimized for mobile, please use desktop to open, or use desktop mode in your phone`}
                     />
 
-                    <PortfolioCard 
+                    <PortfolioCard
                         name="Coffeeshop Landing Page"
                         image={kopiSopoqAngen}
                         github="https://github.com/thomasshelbyyy/kopi-sopoq-angen-landing-page"
@@ -84,13 +113,13 @@ const Portfolio = ()=> {
                         description={`'Kopi Sopoq Angen', or One Heart Coffee in English, this is a responsive landing page example for coffeeshop, all the functionality are not work for now`}
                     />
 
-                    
-                    
+
+
 
                     {showMore && (
                         <>
 
-                            <PortfolioCard 
+                            <PortfolioCard
                                 name="Traversy Media Cloning"
                                 image={traversyMedia}
                                 github="https://github.com/thomasshelbyyy/traversymedia-responsive-cloning"
@@ -98,23 +127,23 @@ const Portfolio = ()=> {
                                 description={`This is a cloning landing page of a website name traversymedia.com. No functionality work here`}
                             />
 
-                            <PortfolioCard 
+                            <PortfolioCard
                                 name="Restaurant Website"
                                 image={restaruantWebsite}
                                 github="https://github.com/thomasshelbyyy/restaurant-website"
                                 link="https://thomasshelbyyy.github.io/restaurant-website/"
                                 description={`This is a Restaurant Website With some main menu, this website purpose is to improve my skill for layouting using CSS Grid`}
                             />
-                            
-                            <PortfolioCard 
+
+                            <PortfolioCard
                                 name="Photography Gallery"
                                 image={photographyGallery}
                                 github="https://github.com/thomasshelbyyy/photograpy-gallery"
                                 link="https://thomasshelbyyy.github.io/photograpy-gallery/"
                                 description={`This is a photography gallery example`}
                             />
-                        
-                            <PortfolioCard 
+
+                            <PortfolioCard
                                 name="MyTunes Landing Page"
                                 image={myTunes}
                                 github="https://github.com/thomasshelbyyy/mytunes-landingpage-example"
