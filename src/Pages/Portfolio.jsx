@@ -15,6 +15,7 @@ import beliKelambi from "../assets/belikelambi.png"
 import calm from "../assets/calm.png"
 import nodewave from "../assets/nodewave.png"
 import quiz from "../assets/quiz.png"
+import petaqkelambi from "../assets/petaqkelambi.png"
 import { useEffect } from "react"
 
 const Portfolio = () => {
@@ -39,6 +40,14 @@ const Portfolio = () => {
                 </div>
 
                 <div className="flex flex-wrap justify-center">
+                    <PortfolioCard
+                        name="Petaqkelambi E-Commerce"
+                        image={petaqkelambi}
+                        github="https://github.com/thomasshelbyyy/petaqkelambi"
+                        link="https://petaqkelambi.vercel.app/"
+                        description={`This project is an e-commerce website for purchasing clothes, built using Next.js and Firebase. With comprehensive features such as add to cart, checkout, review, and login, the project provides a responsive, fast, and secure online shopping experience. With a user-friendly interface and ensured data security, users can explore product collections, complete transactions, and manage their accounts effortlessly.`}
+                    />
+
                     <PortfolioCard
                         name="Quiz App"
                         image={quiz}
@@ -97,13 +106,7 @@ const Portfolio = () => {
                         description={`A classic weather app built with react using openweathermap API`}
                     />
 
-                    <PortfolioCard
-                        name="To Do List"
-                        image={toDoList}
-                        github="https://github.com/thomasshelbyyy/todolist"
-                        link="https://tourmaline-pithivier-5daaba.netlify.app"
-                        description={`simple to do list app, you can add, edit, delete, search and mark as done your task. NOTE: This application is not optimized for mobile, please use desktop to open, or use desktop mode in your phone`}
-                    />
+
 
                     <PortfolioCard
                         name="Coffeeshop Landing Page"
@@ -114,10 +117,16 @@ const Portfolio = () => {
                     />
 
 
-
-
                     {showMore && (
                         <>
+
+                            <PortfolioCard
+                                name="To Do List"
+                                image={toDoList}
+                                github="https://github.com/thomasshelbyyy/todolist"
+                                link="https://tourmaline-pithivier-5daaba.netlify.app"
+                                description={`simple to do list app, you can add, edit, delete, search and mark as done your task. NOTE: This application is not optimized for mobile, please use desktop to open, or use desktop mode in your phone`}
+                            />
 
                             <PortfolioCard
                                 name="Traversy Media Cloning"

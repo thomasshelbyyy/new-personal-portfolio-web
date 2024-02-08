@@ -43,18 +43,38 @@ const rightVariants = {
     }
 }
 
-const Home = ()=> {
+const Home = () => {
 
-    useEffect(()=> {
+    useEffect(() => {
         document.title = "Home | Personal Portfolio Web"
     }, [])
 
-    return(
+    // const handleDownload = async () => {
+    //     const cvUrl = "https://www.linkedin.com/ambry/?x-li-ambry-ep=AQJ8s280Ucmm2wAAAYvCKB2nEr8vs1dovCKDoAJgs5v7cSaFB12TdH8Amds1ibjT-OQfxyIzc-lHJpvriVT7gqhiMNzacwMcpi6MeJZQZDrnFwM5anPlcM5ZyD_uU0jZCCxXk5ez6dtLw3AkGHuT5gYwTsSKKN5c9AicOfNuNYMgeh17WYa_GNUGtIVm1ddAzjIH4iDhdbdSKeOWZqGsaRgCkMzuwUInZObjMf60jsvw7GO96x3t-QPd4fvsjDUoXLwv9-4Sl25nPytPr-qwHplCLB6-dPbiBnQ7aRxg_ceufKhPmKqcpo40CzW9n0jrMwbgb68PQhj13o9b9x_wD2-JB1le-fWiY7LmFUmgBolzUkLvxlfjD2xeWVuki_xFhqA8UmM8NWHIda14jYGaifg-LkFsxH-157hRGleooERJxqJEvKKEK8izcUFO1oZAfOtGqqXotTJ97eXbGD0yT25JXYC0PPkxhIltZrs4qIHiCKKrGBVh7S3cOQLtjJ4evz97yWCLjva7NGe8_crGbitXfFWK-45oU976OQIn4FNk2vwQIt3zeZgevajaUAjvqHT__w&x-ambry-um-filename=Profile.pdf"
+
+    //     try {
+    //         const response = await fetch(cvUrl)
+    //         const blob = await response.blob()
+
+    //         const url = window.URL.createObjectURL(blob)
+
+    //         const a = document.createElement("a")
+    //         a.href = url
+    //         a.download = "Rizky_Resume.pdf"
+    //         document.body.appendChild(a)
+    //         a.click()
+    //         document.body.removeChild(a)
+    //     } catch (error) {
+    //         console.log("error: ", error)
+    //     }
+    // }
+
+    return (
         <div>
             <Header />
-            
+
             <div className="flex md:items-center py-7 w-100 justify-center h-screen flex-wrap pt-32">
-                <motion.div 
+                <motion.div
                     className="flex flex-col font-bold md:border-r md:border-white md:p-6 p-3"
                     variants={leftVariants}
                     initial="hidden"
@@ -65,7 +85,7 @@ const Home = ()=> {
                     <h1 className="text-4xl">Hello World</h1>
                     <h2 className="text-3xl">I Am <span className="text-my-primary font-anton">Rizky</span></h2>
                     <h2 className="text-3xl">A <span className="text-my-primary font-anton">Front End Web Develover</span></h2>
-                    <div>
+                    <div classNme="flex ">
                         <Link to="/about">
                             <motion.button
                                 variants={buttonVariants}
@@ -75,6 +95,7 @@ const Home = ()=> {
                                 More About Me
                             </motion.button>
                         </Link>
+                        {/* <button onClick={handleDownload}>Download My Resume</button> */}
                     </div>
                 </motion.div>
 
@@ -83,9 +104,9 @@ const Home = ()=> {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    src={profile} 
-                    alt="foto saya" 
-                    className="w-48 h-48 rounded-full md:p-6" 
+                    src={profile}
+                    alt="foto saya"
+                    className="w-48 h-48 rounded-full md:p-6"
                 />
             </div>
 
