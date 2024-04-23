@@ -16,6 +16,8 @@ import calm from "../assets/calm.png"
 import nodewave from "../assets/nodewave.png"
 import quiz from "../assets/quiz.png"
 import petaqkelambi from "../assets/petaqkelambi.png"
+import bookmark from "../assets/bookmark.png"
+import easybank from "../assets/easybank.png"
 import { useEffect } from "react"
 
 const Portfolio = () => {
@@ -54,6 +56,22 @@ const Portfolio = () => {
                         github="https://github.com/thomasshelbyyy/quiz-app"
                         link="https://kuiskuisan.netlify.app/"
                         description={`This Quiz App is built with React JS with simple state and props usage, you can see the leaderboard after playing`}
+                    />
+
+                    <PortfolioCard
+                        name="Bookmark Landing Page"
+                        image={bookmark}
+                        github="https://github.com/thomasshelbyyy/bookmark-landing-page"
+                        link="https://thomasshelbyyy.github.io/bookmark-landing-page/"
+                        description={`A responsive landing page for a company called bookmark(fiction), where you can see the beautiful responsive for mobile and desktop screen, all built only with HTML, CSS and Javascript to toggle the navbar and the form validation`}
+                    />
+
+                    <PortfolioCard
+                        name="Easybank Landing Page"
+                        image={easybank}
+                        github="https://github.com/thomasshelbyyy/easybank-landing-page"
+                        link="https://thomasshelbyyy.github.io/easybank-landing-page/"
+                        description={`A responsive landing page for a company called Easybank(fiction), where you can see the beautiful responsive for mobile and desktop screen, all built only with HTML, CSS and Javascript to toggle the navbar`}
                     />
 
                     <PortfolioCard
@@ -117,16 +135,16 @@ const Portfolio = () => {
                     />
 
 
+                    <PortfolioCard
+                        name="To Do List"
+                        image={toDoList}
+                        github="https://github.com/thomasshelbyyy/todolist"
+                        link="https://tourmaline-pithivier-5daaba.netlify.app"
+                        description={`simple to do list app, you can add, edit, delete, search and mark as done your task. NOTE: This application is not optimized for mobile, please use desktop to open, or use desktop mode in your phone`}
+                    />
                     {showMore && (
                         <>
 
-                            <PortfolioCard
-                                name="To Do List"
-                                image={toDoList}
-                                github="https://github.com/thomasshelbyyy/todolist"
-                                link="https://tourmaline-pithivier-5daaba.netlify.app"
-                                description={`simple to do list app, you can add, edit, delete, search and mark as done your task. NOTE: This application is not optimized for mobile, please use desktop to open, or use desktop mode in your phone`}
-                            />
 
                             <PortfolioCard
                                 name="Traversy Media Cloning"
