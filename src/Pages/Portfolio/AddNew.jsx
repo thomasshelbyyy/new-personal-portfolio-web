@@ -34,7 +34,8 @@ const AddNewPortfolio = () => {
                 imageUrl: downloadUrl,
                 github,
                 liveSite,
-                createdAt: serverTimestamp()
+                createdAt: serverTimestamp(),
+                lastUpdate: serverTimestamp()
             }
 
             await addDoc(collection(db, "portfolio"), portfolioData)
