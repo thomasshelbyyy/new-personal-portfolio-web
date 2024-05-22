@@ -1,17 +1,19 @@
-import { useState } from "react";
-import DashboardLayout from "../../Layouts/DashboardLayout"
+import { doc, getDoc, serverTimestamp, updateDoc } from "firebase/firestore"
+import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 import { db, storage } from "../../firebase/init"
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { useNavigate } from "react-router-dom";
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage"
+import DashboardLayout from "../../Layouts/DashboardLayout"
 
-const AddNewPortfolio = () => {
+const UpdatePortfolio = () => {
+    const { id } = useParams()
     const [preview, setPreview] = useState(null)
     const [name, setName] = useState("")
     const [file, setFile] = useState("")
     const [description, setDescription] = useState("")
     const [github, setGithub] = useState("")
     const [liveSite, setLiveSite] = useState("")
+    const [oldImageUrl, setOldImageUrl] = useState()
 
     const navigate = useNavigate()
 
@@ -20,13 +22,35 @@ const AddNewPortfolio = () => {
         setFile(e.target.files[0])
     }
 
+    const deleteFileByUrl = async (imageUrl) => {
+        const baseUrl = "https://firebasestorage.googleapis.com/v0/b/"
+        const bucketName = storage.app.options.storageBucket
+        const path = imageUrl.split(`${baseUrl}${bucketName}/o/`)[1].split('?')[0]
+        const decodePath = decodeURIComponent(path)
+        const fileRef = ref(storage, decodePath)
+        try {
+            await deleteObject(fileRef)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const fileRef = ref(storage, `portfolio/${file.name}`)
 
         try {
-            const snapshot = await uploadBytes(fileRef, file)
-            const downloadUrl = await getDownloadURL(snapshot.ref)
+            let downloadUrl
+
+            if (file && preview) {
+                await deleteFileByUrl(preview)
+            }
+            if (file) {
+                const fileRef = ref(storage, `portfolio/${file.name}`)
+                const snapshot = await uploadBytes(fileRef, file)
+                downloadUrl = await getDownloadURL(snapshot.ref)
+            } else {
+                downloadUrl = preview
+            }
 
             const portfolioData = {
                 name,
@@ -34,16 +58,35 @@ const AddNewPortfolio = () => {
                 imageUrl: downloadUrl,
                 github,
                 liveSite,
-                createdAt: serverTimestamp()
+                lastUpdate: serverTimestamp()
             }
 
-            await addDoc(collection(db, "portfolio"), portfolioData)
-            alert("portfolio succesfully added")
+            const portfolioRef = doc(db, "portfolio", id)
+            await updateDoc(portfolioRef, portfolioData)
+            alert("portfolio succesfully Updated")
             navigate("/dashboard/portfolio")
         } catch (error) {
             console.log(error)
         }
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const snapshot = await getDoc(doc(db, "portfolio", id))
+            const data = snapshot.data()
+
+            setDescription(data.description)
+            setName(data.name)
+            setPreview(data.imageUrl)
+            setGithub(data.github)
+            setLiveSite(data.liveSite)
+            setOldImageUrl(data.imageUrl)
+        }
+
+        fetchData()
+    }, [])
+
+    console.log({ name, description, preview, github, liveSite })
     return (
         <DashboardLayout>
             <div className="p-8">
@@ -78,4 +121,4 @@ const AddNewPortfolio = () => {
     )
 }
 
-export default AddNewPortfolio
+export default UpdatePortfolio

@@ -53,13 +53,13 @@ const DashboardPortfolio = () => {
 
                     <tbody>
                         {portfolios.length > 0 && portfolios.map((portfolio, i) => (
-                            <tr>
-                                <td>{i + 1}</td>
-                                <td>{portfolio.map}</td>
-                                <td><img src={portfolio.imageUrl || ""} alt="" className="w-32 rounded-md" /></td>
-                                <td><a href={portfolio.github} target="_blank">{portfolio.github}</a></td>
-                                <td><a href={portfolio.liveSite} target="_blank">{portfolio.liveSite}</a></td>
-                                <td className="flex gap-3">
+                            <tr key={portfolio.id}>
+                                <td className="px-3 py-1">{i + 1}</td>
+                                <td className="px-3 py-1">{portfolio.name}</td>
+                                <td className="px-3 py-1"><img src={portfolio.imageUrl || ""} alt="" className="w-32 rounded-md" /></td>
+                                <td className="px-3 py-1"><a href={portfolio.github} target="_blank">{portfolio.github}</a></td>
+                                <td className="px-3 py-1"><a href={portfolio.liveSite} target="_blank">{portfolio.liveSite}</a></td>
+                                <td className="px-3 py-1 flex gap-3">
                                     <Link to={`/dashboard/portfolio/detail/${portfolio.id}`} className="bg-blue-600 px-2 py-1 text-white rounded-md"><FaEye /></Link>
                                     <Link to={`/dashboard/portfolio/edit/${portfolio.id}`} className="bg-green-600 px-2 py-1 text-white rounded-md"><FaEdit /></Link>
                                     <button className="bg-red-600 px-2 py-1 text-black rounded-md" onClick={() => handleDelete(portfolio)}><FaTrash /></button>
